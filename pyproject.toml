@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "quant-report"
+version = "0.1.0"
+description = ""
+authors = ["pluto <mayuanchi1029@gmail.com>"]
+readme = "README.md"
+packages = [{include = "quant_report"}]
+
+[tool.poetry.dependencies]
+python = "3.10.9"
+notebook = "^6.5.4"
+ydata-profiling = "^4.3.1"
+ipywidgets = "^8.0.7"
+jinja2 = "^3.1.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
