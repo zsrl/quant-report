@@ -8,16 +8,18 @@
     {% for category, cards in data.items() %}
         <h1 class="text-2xl m-2 font-bold">{{ category }}</h1>
         <div class="flex flex-wrap">
-            {% for code, name in cards.items() %}
+            {% for code, values in cards.items() %}
                 <div class="bg-white w-80 m-2 grid grid-cols-1 divide-y">
                     <div>
-                        <div class="text-2xl py-2 font-bold text-center">{{ name }}</div>
+                        <div class="text-2xl py-2 font-bold text-center">{{ values['name'] }}</div>
                         <p class="text-center pb-2">（{{ code }}）</p>
+                    </div>
+                    <div class="p-2">
+                        <div>基金公司：{{ values['fund_company'] }}</div>
                     </div>
                     <div class="grid grid-cols-2">
                         <div class="py-2 text-center">
-                            {% set link = 'https://xueqiu.com/S/' + code.split('.')[1] + code.split('.')[0] %}
-                            <a href="{{ link }}" target="_blank">指数详情</a>
+                            <a href="{{ values['index_url'] }}" target="_blank">指数详情</a>
                         </div>
                         <div class="py-2 text-center">
                             {% set link = 'https://xueqiu.com/S/' + code.split('.')[1] + code.split('.')[0] %}
